@@ -18,8 +18,8 @@ Next add the Blazicons reference to the `_Imports.razor` file in the Blazor proj
 
 Finally, add the Blazicon component to your Blazor pages/components.
 ```html
-<Blazicon Svg="FlagIcons4x3.Us"></Blazicon>
-<Blazicon Svg="FlagIcons1x1.Us"></Blazicon>
+<Blazicon Svg="FlagIcon4x3.Us"></Blazicon>
+<Blazicon Svg="FlagIcon1x1.Us"></Blazicon>
 ```
 
 ## Parameters & Styling

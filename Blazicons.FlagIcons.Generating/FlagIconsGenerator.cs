@@ -19,10 +19,10 @@ internal class FlagIconsGenerator : ISourceGenerator
             });
 
         var svgFolder = Path.Combine(downloader.ExtractedFolder, $"{downloader.RepoName}-{downloader.BranchName}", "flags", "4x3");
-        context.WriteIconsClass("FlagIcons4x3", svgFolder);
+        context.WriteIconsClass("FlagIcon4x3", svgFolder);
 
         svgFolder = Path.Combine(downloader.ExtractedFolder, $"{downloader.RepoName}-{downloader.BranchName}", "flags", "1x1");
-        context.WriteIconsClass("FlagIcons1x1", svgFolder);
+        context.WriteIconsClass("FlagIcon1x1", svgFolder);
 
         downloader.CleanUp();
     }
