@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>13.0</LangVersion>
+    <TargetFrameworks>net6.0;net8.0;net10.0</TargetFrameworks>
+    <LangVersion>14.0</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationVersion>1.2</ApplicationVersion>
+    <ApplicationVersion>2.0</ApplicationVersion>
     <ApplicationRevision>0</ApplicationRevision>
-    <Version>1.2</Version>
+    <Version>2.0</Version>
     <IsTrimmable>true</IsTrimmable>
     <Authors>Kyle Herzog</Authors>
     <PackageTags>Blazor Flag Icons SVG</PackageTags>
@@ -19,19 +19,29 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageIcon>blazicons-md-128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- Exclude the output of source generators from the compilation -->
-    <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
-    <Compile Remove="Generated\Blazicons.FlagIcons.Generating\Blazicons.FlagIcons.Generating.FlagIconsGenerator\**" />
-    <EmbeddedResource Remove="Generated\Blazicons.FlagIcons.Generating\Blazicons.FlagIcons.Generating.FlagIconsGenerator\**" />
-    <None Remove="Generated\Blazicons.FlagIcons.Generating\Blazicons.FlagIcons.Generating.FlagIconsGenerator\**" />
-  </ItemGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+  <!-- Blazicons code generation configuration for 4x3 flags -->
+  <PropertyGroup>
+    <BlaziconsRepoUrl>https://github.com/lipis/flag-icons/archive/refs/heads/main.zip</BlaziconsRepoUrl>
+    <BlaziconsGeneratedCodeOutputPath>Generated</BlaziconsGeneratedCodeOutputPath>
+    <BlaziconsGeneratorPath>Blazicons.FlagIcons.Generating/Blazicons.FlagIcons.Generating.FlagIconsGenerator</BlaziconsGeneratorPath>
   </PropertyGroup>
+
+  <!-- Configuration for FlagIcon4x3 -->
+  <PropertyGroup>
+    <BlaziconsSvgPattern_4x3>^flags\/4x3\/.*.svg$</BlaziconsSvgPattern_4x3>
+    <BlaziconsClassName_4x3>FlagIcon4x3</BlaziconsClassName_4x3>
+    <BlaziconsSvgFolderPath_4x3>flags/4x3</BlaziconsSvgFolderPath_4x3>
+  </PropertyGroup>
+
+  <!-- Configuration for FlagIcon1x1 -->
+  <PropertyGroup>
+    <BlaziconsSvgPattern_1x1>^flags\/1x1\/.*.svg$</BlaziconsSvgPattern_1x1>
+    <BlaziconsClassName_1x1>FlagIcon1x1</BlaziconsClassName_1x1>
+    <BlaziconsSvgFolderPath_1x1>flags/1x1</BlaziconsSvgFolderPath_1x1>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\README.md">
       <Pack>True</Pack>
@@ -39,16 +49,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Blazicons" Version="2.2.39" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
+    <PackageReference Include="Blazicons" Version="3.0.12" />
+    <PackageReference Include="Blazicons.Generating" Version="3.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.103">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.12.19">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.103">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -56,7 +66,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.12.0.118525">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.19.0.132793">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -66,15 +76,41 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Blazicons.FlagIcons.Generating\Blazicons.FlagIcons.Generating.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <!-- Reference the Blazicons.Generating package (or use ProjectReference for local development) -->
+    <ProjectReference Include="..\..\Blazicons.Generating\Blazicons.Generating\Blazicons.Generating.csproj" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="blazicons-md-128.png">
+    <None Include="blazicons-md-128.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Generated\Blazicons.FlagIcons.Generating\" />
+    <Folder Include="Generated\Blazicons.FlagIcons.Generating\Blazicons.FlagIcons.Generating.FlagIconsGenerator\" />
   </ItemGroup>
+
+  <!-- Import the Blazicons.Generating targets for local development -->
+  <!-- When using the NuGet package, these are imported automatically -->
+  <Import Project="..\..\Blazicons.Generating\build\Blazicons.Generating.props" />
+  <Import Project="..\..\Blazicons.Generating\build\Blazicons.Generating.targets" />
+
+  <!-- Override the default GenerateBlazicons target to generate multiple icon classes -->
+  <Target Name="GenerateBlazicons" BeforeTargets="BeforeBuild" Condition="'$(BlaziconsEnableCodeGeneration)' == 'true' AND ( '$(TargetFramework)' == '' OR ( '$(TargetFrameworks)' != '' AND '$(TargetFramework)' == $([System.String]::Copy('$(TargetFrameworks)').Split(';')[0]) ) )" Inputs="$(MSBuildProjectFullPath)" Outputs="$(BlaziconsGeneratedCodeOutputPath)\**\*.g.cs">
+
+    <PropertyGroup>
+      <_BlaziconsGeneratedOutputDir>$([System.IO.Path]::Combine('$(MSBuildProjectDirectory)', '$(BlaziconsGeneratedCodeOutputPath)'))</_BlaziconsGeneratedOutputDir>
+    </PropertyGroup>
+
+    <Message Text="Running Blazicons generator for $(MSBuildProjectName)..." Importance="high" />
+
+    <!-- Generate FlagIcon4x3 -->
+    <GenerateBlaziconsTask RepoUrl="$(BlaziconsRepoUrl)" SvgPattern="$(BlaziconsSvgPattern_4x3)" ClassName="$(BlaziconsClassName_4x3)" OutputPath="$(_BlaziconsGeneratedOutputDir)" SvgFolderPath="$(BlaziconsSvgFolderPath_4x3)" GeneratorPath="$(BlaziconsGeneratorPath)" />
+
+    <!-- Generate FlagIcon1x1 -->
+    <GenerateBlaziconsTask RepoUrl="$(BlaziconsRepoUrl)" SvgPattern="$(BlaziconsSvgPattern_1x1)" ClassName="$(BlaziconsClassName_1x1)" OutputPath="$(_BlaziconsGeneratedOutputDir)" SvgFolderPath="$(BlaziconsSvgFolderPath_1x1)" GeneratorPath="$(BlaziconsGeneratorPath)" />
+
+    <Message Text="Blazicons generation completed." Importance="high" />
+  </Target>
+
 </Project>
