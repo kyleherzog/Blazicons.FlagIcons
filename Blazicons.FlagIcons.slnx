@@ -8,4 +8,6 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="Blazicons.FlagIcons/Blazicons.FlagIcons.csproj" />
+  <Project Path="Blazicons.FlagIcons1x1/Blazicons.FlagIcons1x1.csproj" Id="47aaa98e-9d95-4af2-81ec-5859900239a9" />
+  <Project Path="Blazicons.FlagIcons4x3/Blazicons.FlagIcons4x3.csproj" Id="c29d11d4-ab19-438b-973b-dbfe365b2e7f" />
 </Solution>
