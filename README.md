@@ -5,7 +5,7 @@ Check out the [Demo Site](http://blazicons.com).
 
 ![Nuget](https://img.shields.io/nuget/v/Blazicons.FlagIcons)
 
-[![Build Status](https://dev.azure.com/kyleherzog/Blazicons/_apis/build/status/Blazicons.FlagIcons?branchName=main)](https://dev.azure.com/kyleherzog/Blazicons.FlagIcons/_build/latest?definitionId=18&branchName=main)
+[![Build Status](https://dev.azure.com/kyleherzog/Blazicons/_apis/build/status%2Fkyleherzog.Blazicons.FlagIcons?branchName=main)](https://dev.azure.com/kyleherzog/Blazicons/_build/latest?definitionId=35&branchName=main)
 
 ## Getting Started
 To get started using the Flag Icons Blazicons, just install the Blazicons.FlagIcons NuGet package.

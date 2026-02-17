@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net8.0;net10.0</TargetFrameworks>
+    <LangVersion>14.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTrimmable>true</IsTrimmable>
+    <DevelopmentDependency>true</DevelopmentDependency>
+  </PropertyGroup>
+
+  <!-- Blazicons code generation configuration for 4x3 flags -->
+  <!-- Output to the main Blazicons.FlagIcons project -->
+  <PropertyGroup>
+    <BlaziconsRepoUrl>https://github.com/lipis/flag-icons/archive/refs/heads/main.zip</BlaziconsRepoUrl>
+    <BlaziconsSvgPattern>^flags\/4x3\/.*.svg$</BlaziconsSvgPattern>
+    <BlaziconsClassName>FlagIcon4x3</BlaziconsClassName>
+    <BlaziconsSvgFolderPath>flags/4x3</BlaziconsSvgFolderPath>
+    <BlaziconsGeneratedCodeOutputPath>..\Blazicons.FlagIcons\Generated</BlaziconsGeneratedCodeOutputPath>
+    <BlaziconsGeneratorPath>Blazicons.FlagIcons.Generating/Blazicons.FlagIcons.Generating.FlagIconsGenerator</BlaziconsGeneratorPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazicons" Version="3.0.12" />
+    <PackageReference Include="Blazicons.Generating" Version="3.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
