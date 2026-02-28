@@ -41,7 +41,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.19.0.132793">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.20.0.135146">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -59,6 +59,16 @@
   <ItemGroup>
     <Folder Include="Generated\Blazicons.FlagIcons.Generating\" />
     <Folder Include="Generated\Blazicons.FlagIcons.Generating\Blazicons.FlagIcons.Generating.FlagIconsGenerator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blazicons.FlagIcons1x1\Blazicons.FlagIcons1x1.csproj">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Blazicons.FlagIcons4x3\Blazicons.FlagIcons4x3.csproj">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>
