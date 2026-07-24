@@ -618,7 +618,7 @@ public static SvgIcon Fo => SvgIcon.FromContent("<defs>    <clipPath id='fo-a'> 
 /// <summary>
 /// Gets the Fr SvgIcon from the FlagIcon4x3 library.
 /// </summary>
-public static SvgIcon Fr => SvgIcon.FromContent("<path fill='#fff' d='M0 0h640v480H0z'></path>  <path fill='#000091' d='M0 0h213.3v480H0z'></path>  <path fill='#e1000f' d='M426.7 0H640v480H426.7z'></path>", attributeSet84);
+public static SvgIcon Fr => SvgIcon.FromContent("<path fill='#000091' d='M0 0h213.3v480H0z'></path>  <path fill='#fff' d='M213.3 0h213.4v480H213.3z'></path>  <path fill='#e1000f' d='M426.7 0H640v480H426.7z'></path>", attributeSet84);
 /// <summary>
 /// Gets the Ga SvgIcon from the FlagIcon4x3 library.
 /// </summary>
@@ -734,7 +734,7 @@ public static SvgIcon Ht => SvgIcon.FromContent("<path fill='#d21034' d='M0 0h64
 /// <summary>
 /// Gets the Hu SvgIcon from the FlagIcon4x3 library.
 /// </summary>
-public static SvgIcon Hu => SvgIcon.FromContent("<g fill-rule='evenodd'>    <path fill='#fff' d='M640 480H0V0h640z'></path>    <path fill='#388d00' d='M640 480H0V320h640z'></path>    <path fill='#d43516' d='M640 160.1H0V.1h640z'></path>  </g>", attributeSet113);
+public static SvgIcon Hu => SvgIcon.FromContent("<g fill-rule='evenodd'>    <path fill='#d43516' d='M0 0h640v160H0z'></path>    <path fill='#fff' d='M0 160h640v160H0z'></path>    <path fill='#388d00' d='M0 320h640v160H0z'></path>  </g>", attributeSet113);
 /// <summary>
 /// Gets the Ic SvgIcon from the FlagIcon4x3 library.
 /// </summary>
@@ -878,7 +878,7 @@ public static SvgIcon Lu => SvgIcon.FromContent("<path fill='#ed2939' d='M0 0h64
 /// <summary>
 /// Gets the Lv SvgIcon from the FlagIcon4x3 library.
 /// </summary>
-public static SvgIcon Lv => SvgIcon.FromContent("<g fill-rule='evenodd'>    <path fill='#fff' d='M0 0h640v480H0z'></path>    <path fill='#981e32' d='M0 0h640v192H0zm0 288h640v192H0z'></path>  </g>", attributeSet149);
+public static SvgIcon Lv => SvgIcon.FromContent("<g fill-rule='evenodd'>    <path fill='#981e32' d='M0 0h640v192H0z'></path>    <path fill='#fff' d='M0 192h640v96H0z'></path>    <path fill='#981e32' d='M0 288h640v192H0z'></path>  </g>", attributeSet149);
 /// <summary>
 /// Gets the Ly SvgIcon from the FlagIcon4x3 library.
 /// </summary>
@@ -1030,7 +1030,7 @@ public static SvgIcon Om => SvgIcon.FromContent("<defs>    <clipPath id='om-a'> 
 /// <summary>
 /// Gets the Pa SvgIcon from the FlagIcon4x3 library.
 /// </summary>
-public static SvgIcon Pa => SvgIcon.FromContent("<defs>    <clipPath id='pa-a'>      <path fill-opacity='.7' d='M0 0h640v480H0z'></path>    </clipPath>  </defs>  <g clip-path='url(#pa-a)'>    <path fill='#fff' d='M0 0h640v480H0z'></path>    <path fill='#fff' fill-rule='evenodd' d='M92.5 0h477.2v480H92.4z'></path>    <path fill='#db0000' fill-rule='evenodd' d='M323 3.6h358v221.7H323z'></path>    <path fill='#0000ab' fill-rule='evenodd' d='M3.2 225.3h319.9V480H3.2zm211.6-47.6-42-29.4-41.7 29.6 15.5-48L105 100l51.6-.4 16-48 16.3 47.9h51.6l-41.5 30 15.9 48z'></path>    <path fill='#d80000' fill-rule='evenodd' d='m516.9 413.9-42.4-27.7-42.1 28 15.6-45.6-42-28 52-.5 16.2-45.4 16.4 45.3h52l-41.8 28.5 16 45.4z'></path>  </g>", attributeSet187);
+public static SvgIcon Pa => SvgIcon.FromContent("<path fill='#fff' d='M0 0h640v480H0z'></path>  <path fill='#db0000' d='M323 0h358v225.3H323z'></path>  <path fill='#0000ab' d='M0 225.3h323.1V480H0z'></path>  <path fill='#0000ab' fill-rule='evenodd' d='m214.8 177.7-42-29.4-41.7 29.6 15.5-48L105 100l51.6-.4 16-48 16.3 47.9h51.6l-41.5 30 15.9 48z'></path>  <path fill='#d80000' fill-rule='evenodd' d='m516.9 413.9-42.4-27.7-42.1 28 15.6-45.6-42-28 52-.5 16.2-45.4 16.4 45.3h52l-41.8 28.5 16 45.4z'></path>", attributeSet187);
 /// <summary>
 /// Gets the Pc SvgIcon from the FlagIcon4x3 library.
 /// </summary>
@@ -1058,7 +1058,7 @@ public static SvgIcon Pk => SvgIcon.FromContent("<defs>    <clipPath id='pk-a'> 
 /// <summary>
 /// Gets the Pl SvgIcon from the FlagIcon4x3 library.
 /// </summary>
-public static SvgIcon Pl => SvgIcon.FromContent("<g fill-rule='evenodd'>    <path fill='#fff' d='M640 480H0V0h640z'></path>    <path fill='#dc143c' d='M640 480H0V240h640z'></path>  </g>", attributeSet194);
+public static SvgIcon Pl => SvgIcon.FromContent("<g fill-rule='evenodd'>    <path fill='#fff' d='M0 0h640v240H0z'></path>    <path fill='#dc143c' d='M0 240h640v240H0z'></path>  </g>", attributeSet194);
 /// <summary>
 /// Gets the Pm SvgIcon from the FlagIcon4x3 library.
 /// </summary>
@@ -1274,7 +1274,7 @@ public static SvgIcon Tz => SvgIcon.FromContent("<defs>    <clipPath id='tz-a'> 
 /// <summary>
 /// Gets the Ua SvgIcon from the FlagIcon4x3 library.
 /// </summary>
-public static SvgIcon Ua => SvgIcon.FromContent("<g fill-rule='evenodd' stroke-width='1pt'>    <path fill='gold' d='M0 0h640v480H0z'></path>    <path fill='#0057b8' d='M0 0h640v240H0z'></path>  </g>", attributeSet248);
+public static SvgIcon Ua => SvgIcon.FromContent("<g fill-rule='evenodd' stroke-width='1pt'>    <path fill='#0057b8' d='M0 0h640v240H0z'></path>    <path fill='gold' d='M0 240h640v240H0z'></path>  </g>", attributeSet248);
 /// <summary>
 /// Gets the Ug SvgIcon from the FlagIcon4x3 library.
 /// </summary>
