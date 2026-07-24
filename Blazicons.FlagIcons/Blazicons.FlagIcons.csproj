@@ -19,6 +19,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageIcon>blazicons-md-128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+	<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
 
   <ItemGroup>
